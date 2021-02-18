@@ -1,0 +1,47 @@
+.advert-title {
+    font-size: 17px;
+    line-height: 28px;
+    padding: 20px 0px 8px 0px;
+    color: #b7b7b7;
+}
+
+.category {
+    width: auto;
+}
+
+.card {
+    background: #e8e8e8;
+    padding: 20px 10px;
+    width: 210px;
+}
+
+.card-preview {
+    width: 200px;
+}
+
+.category {
+    font-size: 13px;
+}
+
+.category li a {
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 2px 0px 0px 0px;
+}
+
+.category li a:hover {
+    color: cornflowerblue;
+}
+
+.category li a span {
+    text-decoration: none;
+    font-weight: 100;
+    padding: 2px 0px 0px 0px;
+    color: #b7b7b7;
+    font-size: 13px;
+}
+
+.category li {}
+
+.category ul {}

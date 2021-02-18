@@ -1,0 +1,104 @@
+.block-search {
+    display: flex;
+    width: inherit;
+}
+
+.block-search-select {
+    display: flex;
+    padding: 6px;
+}
+
+.block-search-input {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding: 6px;
+}
+
+.block-search-input input {
+    width: 100px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.block-search-send {
+    width: 100px;
+    width: 130px;
+    padding: 6px;
+    font-size: 15px;
+}
+
+
+/* The container must be positioned relative: */
+
+.block-search-select {
+    position: relative;
+    font-family: Arial;
+}
+
+.block-search-select select {
+    display: none;
+    /*hide original SELECT element: */
+}
+
+.block-search-select {
+    background-color: rgb(224, 224, 224);
+}
+
+
+/* Style the arrow inside the select element: */
+
+.block-search-select:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+
+/* Point the arrow upwards when the select box is open (active): */
+
+.block-search-select.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+
+/* style the items (options), including the selected item: */
+
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+
+/* Style items (options): */
+
+.select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+
+/* Hide the items when the select box is closed: */
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}

@@ -8,6 +8,10 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/search.css" rel="stylesheet">
+    <link href="css/advert.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -18,7 +22,7 @@
             <div class="block-header">
 
                 <div class="block-header-logo">
-                    <a href="/"> <img src="./images/logo.png" /></a>
+                    <a href="./index.html"> <img src="./images/logo.png" /></a>
                 </div>
                 <div class="block-header-category">
                     <ul>
@@ -36,20 +40,15 @@
             </div>
 
 
-
-            <div class="block-search">
-
-                <div class="block-search-logo">
-
-                </div>
-
-                <div class="block-search-profile">
-
-                </div>
-            </div>
-
-
-
+            <form class="block-search">  
+                        <select  class="block-search-select" name="category">
+                            <option value="0">Любая категория</option>
+                            <option value="1">Транспорт</option>
+                            <option value="2">Недвижимость</option>
+                        </select>
+                        <input class="block-search-input" value="" maxlength="50" name="search"/>
+                        <button  class="block-search-send">Найти</button>
+                    </form>
         </header>
         <!-- .header-->
 
@@ -57,9 +56,35 @@
 
             <div class="container">
                 <main class="content">
-                    <strong>Content:</strong> Sed placerat accumsan ligula. Aliquam felis magna, congue quis, tempus eu, aliquam vitae, ante. Cras neque justo, ultrices at, rhoncus a, facilisis eget, nisl. Quisque vitae pede. Nam et augue. Sed a elit.
-                    Ut vel massa. Suspendisse nibh pede, ultrices vitae, ultrices nec, mollis non, nibh. In sit amet pede quis leo vulputate hendrerit. Cras laoreet leo et justo auctor condimentum. Integer id enim. Suspendisse egestas, dui ac egestas
-                    mollis, libero orci hendrerit lacus, et malesuada lorem neque ac libero. Morbi tempor pulvinar pede. Donec vel elit.
+
+                    <div class="category">
+                        <ul>
+                            <li><a href="#">Личные вещи <span>200</span></a></li>
+                            <li><a href="#">Транспорт <span>100</span></a></li>
+                            <li><a href="#">Недвижимость <span>300</span></a></li>
+                        </ul>
+                    </div>
+
+                    <h2 class="advert-title">Все объявления</h2>
+                    <div class="adverts">
+                        <div class="card" id="1">
+
+                            <div class="card-preview">
+                                <img src="./photo/1/photo.jpg" />
+                            </div>
+                            <div class="card-title">
+                                Ваз-2121 продам дорого
+                            </div>
+                            <div class="card-cost">
+                                200 000 рублей
+                            </div>
+                            <div class="card-address">
+                                Москва, проспект Ленина, 21
+                            </div>
+                        </div>
+
+                    </div>
+
                 </main>
                 <!-- .content -->
             </div>
@@ -74,14 +99,14 @@
         </div>
         <!-- .middle-->
 
-    </div>
-    <!-- .wrapper -->
+        </div>
+        <!-- .wrapper -->
 
-    <footer class="footer">
-        <strong>Footer:</strong> Mus elit Morbi mus enim lacus at quis Nam eget morbi. Et semper urna urna non at cursus dolor vestibulum neque enim. Tellus interdum at laoreet laoreet lacinia lacinia sed Quisque justo quis. Hendrerit scelerisque lorem
-        elit orci tempor tincidunt enim Phasellus dignissim tincidunt. Nunc vel et Sed nisl Vestibulum odio montes Aliquam volutpat pellentesque. Ut pede sagittis et quis nunc gravida porttitor ligula.
-    </footer>
-    <!-- .footer -->
+        <footer class="footer">
+            <strong>Footer:</strong> Mus elit Morbi mus enim lacus at quis Nam eget morbi. Et semper urna urna non at cursus dolor vestibulum neque enim. Tellus interdum at laoreet laoreet lacinia lacinia sed Quisque justo quis. Hendrerit scelerisque
+            lorem elit orci tempor tincidunt enim Phasellus dignissim tincidunt. Nunc vel et Sed nisl Vestibulum odio montes Aliquam volutpat pellentesque. Ut pede sagittis et quis nunc gravida porttitor ligula.
+        </footer>
+        <!-- .footer -->
 
 </body>
 

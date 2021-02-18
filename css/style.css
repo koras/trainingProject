@@ -93,8 +93,9 @@ body {
 
 .block-search {
     display: block;
-    padding: 20px;
-    background: #c77466;
+    padding: 2px;
+    background: #adadad;
+    margin: 16px 0px 20px 0px;
 }
 
 .block-header-profile button {
