@@ -25,23 +25,55 @@
 
 .category li a {
     text-decoration: none;
-    font-weight: 600;
     display: block;
+    color: #009cf0;
     padding: 2px 0px 0px 0px;
+    font-size: 14px;
 }
 
 .category li a:hover {
-    color: cornflowerblue;
+    color: blue;
+}
+
+.category {
+    position: relative;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: justify;
+    padding: 0px 0px 20px 0px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.category:after {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.category>div {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+    height: auto;
+    box-sizing: border-box;
+    text-align: left;
+    vertical-align: top;
 }
 
 .category li a span {
     text-decoration: none;
-    font-weight: 100;
-    padding: 2px 0px 0px 0px;
-    color: #b7b7b7;
-    font-size: 13px;
+    padding: 2px 0px 0px 10px;
+    color: gray;
+    font-size: 14px;
 }
 
-.category li {}
+.category li {
+    display: block;
+    padding: 3px 0px 0px 0px;
+}
 
 .category ul {}
