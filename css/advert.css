@@ -5,19 +5,26 @@
     color: #b7b7b7;
 }
 
+.adverts {}
+
 .category {
     width: auto;
 }
 
 .card {
-    background: #e8e8e8;
-    padding: 20px 10px;
-    width: 210px;
+    background: #f7f7f7;
+    padding: 6px 8px 20px 8px;
+    width: 213px;
+    font-size: 14px!important;
+    display: inline-grid;
+    margin: 5px 0px 5px 0px;
 }
 
-.card-preview {
-    width: 200px;
+.card img {
+    width: 215px;
 }
+
+.card-preview {}
 
 .category {
     font-size: 13px;
@@ -77,3 +84,23 @@
 }
 
 .category ul {}
+
+.card-title {
+    max-width: 100%;
+    font-weight: 700;
+    outline-color: #009cf0;
+    color: rgb(0, 156, 240);
+}
+
+.card-cost {
+    color: rgb(0, 0, 0);
+    line-height: 18px!important;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: 0;
+    font-weight: 700;
+}
+
+.card-address {
+    color: #999;
+    line-height: 20px;
+}
