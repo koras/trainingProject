@@ -1,6 +1,9 @@
 .block-search {
     display: flex;
     width: inherit;
+    padding: 2px;
+    background: #adadad;
+    margin: 1px 0px 20px 0px;
 }
 
 .block-search-select {
