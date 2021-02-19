@@ -104,3 +104,52 @@
     color: #999;
     line-height: 20px;
 }
+
+
+/* карточки в сайдбаре */
+
+.card-mini {
+    display: flex;
+    margin: 10px 0px 10px 0px;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 5px 0px 5px 0px;
+}
+
+.card-mini-preview {
+    padding: 0px 0px 5px 0px;
+}
+
+.card-mini-preview img {
+    vertical-align: top;
+    width: 100px;
+}
+
+.card-info {}
+
+.card-mini-title,
+.card-mini-cost {
+    padding: 0px 0px 10px 5px;
+    display: block;
+}
+
+.card-mini-cost-free {
+    font-weight: 700;
+    color: rgb(22 93 5);
+    font-size: 14px;
+    background: #fffb8f;
+    width: auto;
+    display: inline-flex;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 0px 0px 10px;
+}
+
+.card-mini-title {
+    vertical-align: top;
+    max-width: 100%;
+    font-weight: 700;
+    outline-color: #009cf0;
+    color: rgb(0, 156, 240);
+    padding: 0px 0px 5px 5px;
+}
+
+.card-mini-cost {}
