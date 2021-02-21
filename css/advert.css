@@ -122,6 +122,7 @@
 .card-mini-preview img {
     vertical-align: top;
     width: 100px;
+    border: 1px solid #dddddd;
 }
 
 .card-info {}
