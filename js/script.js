@@ -34,4 +34,6 @@ request.addEventListener('readystatechange', function() {
 
 // 5. Отправка запроса на сервер
 // coment test 2
+
+// я бы поправил, но не хочу
 request.send(body);
