@@ -1,0 +1,40 @@
+ .form-server input {
+     display: block;
+ }
+ 
+ .advert-form {
+     width: 80%;
+     margin: 30px auto;
+     padding: 20px 0px;
+     border-right: 2px solid #8f8f8f;
+     border-left: 2px solid #8f8f8f;
+ }
+ 
+ .advert-form div {
+     padding: 8px 70px;
+ }
+ 
+ .advert-form input {
+     width: 100%;
+     padding: 10px 10px;
+     font-size: 14px;
+ }
+ 
+ .advert-form button {
+     padding: 10px;
+     font-size: 16px;
+     cursor: pointer;
+ }
+ 
+ .advert-form button:hover {
+     background-color: #dddddd;
+ }
+ 
+ .advert-form_button {
+     display: block;
+ }
+ 
+ .advert-form_title {
+     color: #3b3b3b;
+     font-size: 21px;
+ }
