@@ -84,21 +84,29 @@
                         <form class="advert-form" method="GET" action="/reg">
 
                             <div class="advert-form_title">
-                                Регистрация
+                                Вход на сайт
                             </div>
 
                             <div>
-                                <input type="text" maxlength="24" placeholder="Введите ваш логин" name="login" />
+                                <input type="text" maxlength="24" placeholder="Ваш логин" name="login" />
                             </div>
                             <div>
                                 <input type="password" maxlength="24" placeholder="Ввведите ваш пароль" name="password" />
                             </div>
-                            <div>
-                                <input type="password" maxlength="24" placeholder="Повторите ваш пароль" name="repassword" />
-                            </div>
-                            <div class="advert-form_button">
+                            <div class="advert-form_button advert-form_button__login">
 
-                                <button type="button">Зарегистрироваться </button>
+
+                                <div>
+                                    <a href="#repass" target="_self">Восстановить пароль</a>
+                                </div>
+                                <div class="advert-form_button__remember">
+                                    <input type="checkbox" checked /> Запомнить меня
+                                </div>
+
+                                <div class="advert-form_button__login">
+                                    <button type="button">Войти </button>
+                                </div>
+
 
                             </div>
                         </form>
