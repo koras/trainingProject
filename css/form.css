@@ -67,3 +67,33 @@
      display: flex;
      justify-content: flex-end;
  }
+ 
+ .advert-form-add input::placeholder {
+     color: #474747;
+ }
+ 
+ .advert-form input[type="file"] {
+     width: 49%;
+ }
+ 
+ .advert-form_category,
+ .advert-form_file,
+ .advert-form_body {
+     /* background-color: blueviolet;
+     border: 1px solid #545d99; */
+ }
+ 
+ .advert-form textarea {
+     width: 100%;
+ }
+ 
+ .advert-form label {
+     width: 50%;
+     display: inline-block;
+     /* background: blanchedalmond; */
+     font-size: 17px;
+ }
+ 
+ .advert-form select {
+     padding: 5px;
+ }
