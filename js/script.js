@@ -29,3 +29,9 @@ if (document.getElementById('myButton')) {
         //  liLast.append(liLast); // вставить liLast в конец <ol>
     });
 }
+
+function deleteEl(el) {
+    // console.log(this.parent);
+    console.log(el);
+    el.parentElement.remove();
+}
