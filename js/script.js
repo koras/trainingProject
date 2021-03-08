@@ -1,18 +1,31 @@
-let template = `
-<div class="card-mini" id="${id}">
-    <div class="card-mini-preview">
-        <img src="./images/${img}.jpg" />
+function getTamplate() {
+    let template = `
+    <div class="card" id="1">
+    <div class="card-preview">
+        <img src="./images/default.jpg">
     </div>
-    <div class="card-info">
-        <div class="card-mini-title">
-            ${title}
-        </div>
-        <div class="card-mini-cost">
-        ${cost} ₽
-        </div>
+    <div class="card-title">
+        Заголовок объявления
+    </div>
+    <div class="card-cost">
+        200 000 ₽
+    </div>
+    <div class="card-address">
+        Москва, проспект Ленина, 21
     </div>
 </div>`;
+    return template;
+}
 
-document.getElementById('myButton').addEventListener('click', function() {
-    alert(123123);
-});
+
+if (document.getElementById('myButton')) {
+    document.getElementById('myButton').addEventListener('click', function() {
+
+
+        let tamp = getTamplate();
+        console.log(tamp);
+        let liLast = document.getElementById('adverts')
+        liLast.insertAdjacentHTML('afterend', tamp);
+        //  liLast.append(liLast); // вставить liLast в конец <ol>
+    });
+}
