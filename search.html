@@ -10,9 +10,14 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/search.css" rel="stylesheet">
     <link href="css/advert.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
 </head>
 
 <body>
+    <button id="myButton">afasdfadfasdf</button>
+    <template id="my">
+ 
+    </template>
     <div class="wrapper">
 
         <header class="header">
@@ -33,7 +38,7 @@
                 <div class="block-header-profile">
                     <a href="#" class="block-buttom my-adv">Мои объявление</a>
                     <a href="#" class="block-buttom profile">Профиль</a>
-                    <button id="create-adv" class="block-buttom create">Разместить объявление</button>
+                    <button class="block-buttom create">Разместить объявление</button>
                 </div>
             </div>
 
@@ -78,134 +83,37 @@
 
                     </div>
 
-                    <h2 class="advert-title">Все объявления</h2>
-                    <div class="adverts" id="adverts">
+                    <div class="registration">
+
+                        <form class="advert-form" method="GET" action="/reg">
+
+                            <div class="advert-form_title">
+                                Вход на сайт
+                            </div>
+
+                            <div>
+                                <input type="text" maxlength="24" placeholder="Ваш логин" name="login" />
+                            </div>
+                            <div>
+                                <input type="password" maxlength="24" placeholder="Ввведите ваш пароль" name="password" />
+                            </div>
+                            <div class="advert-form_button advert-form_button__login">
 
 
-                        <div class="card" id="1">1
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div onclick="deleteEl(this)" class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
+                                <div>
+                                    <a href="#repass" target="_self">Восстановить пароль</a>
+                                </div>
+                                <div class="advert-form_button__remember">
+                                    <input type="checkbox" checked /> Запомнить меня
+                                </div>
 
-                        <div class="card" id="2">2
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div onclick="deleteEl(this)" class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="3">3
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="4">4
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="5">5
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
+                                <div class="advert-form_button__login">
+                                    <button type="button">Войти </button>
+                                </div>
 
 
-
-                        <div class="card" id="6">6
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
                             </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-
-
-                        <div class="card" id="7">7
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="8">8
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
+                        </form>
                     </div>
 
                 </main>
@@ -328,7 +236,13 @@
     </footer>
     <!-- .footer -->
 
+    <script type="text/javascript" src="./js/SearchTamplate.js"></script>
+    <script type="text/javascript" src="./js/Search.js"></script>
+    <script type="text/javascript" src="./js/Google.js"></script>
+
     <script type="text/javascript" src="./js/script.js"></script>
+
+
 </body>
 
 </html>
