@@ -1,37 +1,12 @@
-function getTamplate() {
-    let template = `
-    <div class="card" id="1">
-    <div class="card-preview">
-        <img src="./images/default.jpg">
-    </div>
-    <div class="card-title">
-        Заголовок объявления
-    </div>
-    <div class="card-cost">
-        200 000 ₽
-    </div>
-    <div class="card-address">
-        Москва, проспект Ленина, 21
-    </div>
-</div>`;
-    return template;
-}
+// получаем элемент куда добавлять результаты поиска
+let domElement = document.getElementById('search-google');
 
+let word = "Найти новый магазин"
+let wordSecond = "Опять ищем магазин";
+// Создаём класс поиска
+let google = new Google(domElement);
 
-if (document.getElementById('myButton')) {
-    document.getElementById('myButton').addEventListener('click', function() {
-
-
-        let tamp = getTamplate();
-        console.log(tamp);
-        let liLast = document.getElementById('adverts')
-        liLast.insertAdjacentHTML('afterend', tamp);
-        //  liLast.append(liLast); // вставить liLast в конец <ol>
-    });
-}
-
-function deleteEl(el) {
-    // console.log(this.parent);
-    console.log(el);
-    el.parentElement.remove();
-}
+// Вызываем поиск, результаты записываем на страницу
+google.form(word);
+// вызываем поиск снова, но уже с другими параметрами
+google.form(wordSecond);
