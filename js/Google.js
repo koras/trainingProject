@@ -2,8 +2,8 @@ class Google {
     constructor(el) {
             this.el = el;
             // объявляем класс шаблона. Устанавливаем браузер пользователя
-            //   this.template = new SearchTemplate('chrome');
-            this.template = new SearchTemplate('iphone');
+            this.template = new SearchTemplate('chrome');
+            //  this.template = new SearchTemplate('iphone');
 
             // объявляем класс поиска
             this.search = new Search();
