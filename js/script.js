@@ -1,39 +1,49 @@
-console.log('12')
-    // 2. Создание переменной request
+// получаем элемент куда добавлять результаты поиска
+let domElement = document.getElementById('search-google');
+// находим нашу кнопку
+let searchButton = document.getElementById('searchButton');
+// получаем input нашей формы
+let inputGoogle = document.getElementById('formGoogle');
 
-var body = ['\r\n'];
-var boundary = String(Math.random()).slice(2);
-var boundaryMiddle = '--' + boundary + '\r\n';
-var boundaryLast = '--' + boundary + '--\r\n'
-
-for (var key in data) {
-    // добавление поля
-    body.push('Content-Disposition: form-data; name="' + key + '"\r\n\r\n' + data[key] + '\r\n');
-}
-body = body.join(boundaryMiddle) + boundaryLast;
+// в каком элементе будем считать сколько нашли
+let conutGoogle = document.getElementById('search-google-count');
 
 
-var request = new XMLHttpRequest();
-// 3. Настройка запроса
-request.open('GET', 'https://praktikum.tk/cohort12/cards', true);
-// 4. Подписка на событие onreadystatechange и обработка его с помощью анонимной функции
-request.addEventListener('readystatechange', function() {
-    // если состояния запроса 4 и статус запроса 200 (OK)
-    if ((request.readyState == 4) && (request.status == 200)) {
-        // например, выведем объект XHR в консоль браузера
-        console.log(request);
-        // и ответ (текст), пришедший с сервера в окне alert
-        console.log(request.responseText);
-        // получить элемент c id = welcome
-        var welcome = document.getElementById('welcome');
-        // заменить содержимое элемента ответом, пришедшим с сервера
-        welcome.innerHTML = request.responseText;
+
+//console.log(inputGoogle.value);
+
+
+let word = "Найти новый магазин"
+let wordSecond = "Опять ищем магазин";
+let wordSecond2 = "Опять ищем магазин другой";
+// Создаём класс поиска
+let google = new Google(domElement);
+
+// Вызываем поиск, результаты записываем на страницу
+///google.form(word);
+// google.form(wordSecond);
+// google.form(wordSecond2);
+
+// вешаем слушатель на кнопку
+// searchButton.addEventListener('click', function() {
+//     //console.log('нажали на кнопку');
+// })
+let clickSearch = function() {
+    let getInput = inputGoogle.value;
+    let text = '';
+
+    google.form(getInput);
+    let countElement = google.getLength();
+    console.log(countElement);
+
+
+    if (countElement === 0) {
+        text = `мы ничего не нашли`;
+    } else {
+        text = `Мы нашли ${countElement} элемент(а/ов). Мы искали "${getInput}" `;
     }
-});
+    conutGoogle.innerText = text;
+}
 
 
-// 5. Отправка запроса на сервер
-// coment test 2
-
-// я бы поправил, но не хочу
-request.send(body);
+searchButton.addEventListener('click', clickSearch);

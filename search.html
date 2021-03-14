@@ -10,6 +10,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/search.css" rel="stylesheet">
     <link href="css/advert.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +24,6 @@
                 </div>
                 <div class="block-header-category">
                     <ul>
-
                         <li><a href="#">Авто</a></li>
                         <li><a href="#">Недвижимость</a></li>
                         <li><a href="#">Работа</a></li>
@@ -33,7 +33,7 @@
                 <div class="block-header-profile">
                     <a href="#" class="block-buttom my-adv">Мои объявление</a>
                     <a href="#" class="block-buttom profile">Профиль</a>
-                    <button id="create-adv" class="block-buttom create">Разместить объявление</button>
+                    <button class="block-buttom create">Разместить объявление</button>
                 </div>
             </div>
 
@@ -43,8 +43,8 @@
                             <option value="1">Транспорт</option>
                             <option value="2">Недвижимость</option>
                         </select>
-                <input class="block-search-input" value="" maxlength="50" name="search" />
-                <button class="block-search-send">Найти</button>
+                <input id="formGoogle" class="block-search-input" maxlength="50" name="search" value="" placeholder="Что вы хотите найти ?" />
+                <button class="block-search-send" id="searchButton" type="button">Найти</button>
             </form>
         </header>
         <!-- .header-->
@@ -78,135 +78,8 @@
 
                     </div>
 
-                    <h2 class="advert-title">Все объявления</h2>
-                    <div class="adverts" id="adverts">
-
-
-                        <div class="card" id="1">1
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div onclick="deleteEl(this)" class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="2">2
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div onclick="deleteEl(this)" class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="3">3
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="4">4
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="5">5
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-
-
-                        <div class="card" id="6">6
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-
-
-                        <div class="card" id="7">7
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                        <div class="card" id="8">8
-                            <div class="card-preview">
-                                <img src="./images/default.jpg" />
-                            </div>
-                            <div class="card-title">
-                                Заголовок объявления
-                            </div>
-                            <div class="card-cost">
-                                200 000 ₽
-                            </div>
-                            <div class="card-address">
-                                Москва, проспект Ленина, 21
-                            </div>
-                        </div>
-
-                    </div>
+                    <div id="search-google-count"></div>
+                    <div id="search-google"> Здесь должны быть наши объявления</div>
 
                 </main>
                 <!-- .content -->
@@ -328,7 +201,13 @@
     </footer>
     <!-- .footer -->
 
+    <script type="text/javascript" src="./js/SearchTemplate.js"></script>
+    <script type="text/javascript" src="./js/Search.js"></script>
+    <script type="text/javascript" src="./js/Google.js"></script>
+
     <script type="text/javascript" src="./js/script.js"></script>
+
+
 </body>
 
 </html>
