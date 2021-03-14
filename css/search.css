@@ -105,3 +105,49 @@
 .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+.data-browser,
+.data-mobile {
+    width: 100%;
+    /* background-color: blue; */
+    font-size: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.data-browser {
+    padding: 10px 0px;
+}
+
+.data-mobile {}
+
+.browser-url {
+    /* background-color: burlywood; */
+}
+
+.browser-id {
+    /* background-color: brown; */
+    padding: 5px 10px;
+}
+
+.browser-name {
+    /* background-color: cyan; */
+    padding: 5px 16px;
+    font-weight: 700;
+}
+
+.mobile-url {
+    /* background-color: burlywood; */
+}
+
+.mobile-id {
+    /* background-color: brown; */
+}
+
+.mobile-name {
+    /* background-color: cyan; */
+}
+
+.browser-data {
+    display: flex;
+    justify-content: flex-start;
+}

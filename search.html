@@ -14,10 +14,6 @@
 </head>
 
 <body>
-    <button id="myButton">afasdfadfasdf</button>
-    <template id="my">
- 
-    </template>
     <div class="wrapper">
 
         <header class="header">
@@ -28,7 +24,6 @@
                 </div>
                 <div class="block-header-category">
                     <ul>
-
                         <li><a href="#">Авто</a></li>
                         <li><a href="#">Недвижимость</a></li>
                         <li><a href="#">Работа</a></li>
@@ -48,8 +43,8 @@
                             <option value="1">Транспорт</option>
                             <option value="2">Недвижимость</option>
                         </select>
-                <input class="block-search-input" value="" maxlength="50" name="search" />
-                <button class="block-search-send">Найти</button>
+                <input id="formGoogle" class="block-search-input" maxlength="50" name="search" value="" placeholder="Что вы хотите найти ?" />
+                <button class="block-search-send" id="searchButton" type="button">Найти</button>
             </form>
         </header>
         <!-- .header-->
@@ -83,38 +78,8 @@
 
                     </div>
 
-                    <div class="registration">
-
-                        <form class="advert-form" method="GET" action="/reg">
-
-                            <div class="advert-form_title">
-                                Вход на сайт
-                            </div>
-
-                            <div>
-                                <input type="text" maxlength="24" placeholder="Ваш логин" name="login" />
-                            </div>
-                            <div>
-                                <input type="password" maxlength="24" placeholder="Ввведите ваш пароль" name="password" />
-                            </div>
-                            <div class="advert-form_button advert-form_button__login">
-
-
-                                <div>
-                                    <a href="#repass" target="_self">Восстановить пароль</a>
-                                </div>
-                                <div class="advert-form_button__remember">
-                                    <input type="checkbox" checked /> Запомнить меня
-                                </div>
-
-                                <div class="advert-form_button__login">
-                                    <button type="button">Войти </button>
-                                </div>
-
-
-                            </div>
-                        </form>
-                    </div>
+                    <div id="search-google-count"></div>
+                    <div id="search-google"> Здесь должны быть наши объявления</div>
 
                 </main>
                 <!-- .content -->
@@ -236,7 +201,7 @@
     </footer>
     <!-- .footer -->
 
-    <script type="text/javascript" src="./js/SearchTamplate.js"></script>
+    <script type="text/javascript" src="./js/SearchTemplate.js"></script>
     <script type="text/javascript" src="./js/Search.js"></script>
     <script type="text/javascript" src="./js/Google.js"></script>
 

@@ -7,25 +7,30 @@ class SearchTemplate {
      * @param {string} type - тип нашего устроиства 
      */
     constructor(types) {
+            /**
+             * тип устроиства
+             */
+            this.type = types;
+        }
         /**
-         * тип устроиства
+         * 
+         * @param {object} obj 
+         * @returns 
          */
-        this.type = types;
-    }
-    getTamplate(name, id) {
+    getTamplate(obj) {
             let template = '';
             switch (this.type) {
                 case "firefox":
                 case "opera":
                 case "chrome":
                     {
-                        template = this._browser(name, id);
+                        template = this._browser(obj);
                     }
                     break;
                 case "iphone":
                 case "android":
                     {
-                        template = this._mobile(name, id);
+                        template = this._mobile(obj);
                     }
                     break;
                 default:
@@ -37,21 +42,27 @@ class SearchTemplate {
         }
         /**
          * Брайзер пользователя на компьютере
-         * @param {string} name 
-         * @param {int} id 
+         * @param {object} obj  
          * @returns 
          */
-    _browser(name, id) {
-        return `<div class="data-browser">browser<div>${name} </div><div>${id}</div></div>`
+    _browser(obj) {
+        return `<div class="data-browser">
+        <div class="browser-data">
+            <div  class="browser-id">${obj.id}</div>
+            <div  class="browser-name">${obj.name} </div> 
+        </div> 
+        <div class="browser-url">
+            <a href="${obj.url}">${obj.name}</a>
+         </div>
+        </div>`;
     }
 
     /**
      * Мобильное устроиство
-     * @param {string} name 
-     * @param {int} id 
+     * @param {object} obj  
      * @returns 
      */
-    _mobile(name, id) {
-        return `<div class="data-mobile">mobile<div>${name} </div><div>${id}</div></div>`
+    _mobile(obj) {
+        return `<div class="data-mobile">mobile<div class="mobile-name">${obj.name} </div><div class="mobile-id">${obj.id}</div></div>`;
     }
 }
