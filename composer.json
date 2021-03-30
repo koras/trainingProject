@@ -1,0 +1,13 @@
+{
+    "name": "admin/htmlproject",
+    "authors": [{
+        "name": "I am author",
+        "email": "admin@admin.ru"
+    }],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "application"
+        }
+    }
+}
