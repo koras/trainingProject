@@ -22,6 +22,7 @@
 
 .card img {
     width: 215px;
+    max-height: 155px;
 }
 
 .card-preview {}

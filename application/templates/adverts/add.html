@@ -1,0 +1,54 @@
+<!-- .header-->
+{% include 'header.html' %} {% include 'search_form.html' %}
+<div class="middle">
+
+    <div class="container">
+        <main class="content">
+            <!-- start category -->
+
+
+            <!-- end category -->
+
+            <h2 class="advert-title">Все объявления</h2>
+
+
+            <div class="content_form">
+                <form class="advert-form advert-form-add" method="POST" action="/advert/add" enctype="multipart/form-data">
+                    <div>
+                        <input type="text" maxlength="64" placeholder="Заголовок вашего объявления" name="title" />
+                    </div>
+
+                    <div class="advert-form_category">
+                        <label class="label">Выберите категорию</label>
+
+                        <select name="category">
+                                        <option value="0">Все категории</option> 
+                                        <option selected="selected" value="4">Недвижимость</option> 
+                                        <option value="7">Авто</option> 
+                                        <option value="9">Работа</option> 
+                                    </select>
+                    </div>
+                    <div class="advert-form_file">
+                        <label>Выберите файл</label>
+
+                        <input type="file" name="image" />
+
+                    </div>
+
+                    <div class="advert-form_body">
+                        <textarea name="body" placeholder="Текст объявления" rows="10"></textarea>
+                    </div>
+                    <div class="advert-form_button">
+                        <button type="submit">Добавить объявление</button>
+                    </div>
+                </form>
+            </div>
+            <!-- .container-->
+        </main>
+        <!-- .content -->
+    </div>
+    {% include 'sidebar.html' %}
+    <!-- .container-->
+</div>
+<!-- .middle-->
+{% include 'footer.html' %}

@@ -1,15 +1,14 @@
 <?php
-
+ 
 require '../vendor/autoload.php';
+//include '../application/routes/Web.php';
 
 use App\routes\Web;
 
-$web = new Web();
-
-echo "call ". __CLASS__ . " here ";
-
-use App\models\Legs;
-$web = new Legs();
 
 
- 
+$webClass = new Web();
+// https://www.php.net/manual/ru/reserved.variables.server.php
+$webClass -> callController($_SERVER['REQUEST_METHOD'],$_SERVER['REQUEST_URI']);
+
+

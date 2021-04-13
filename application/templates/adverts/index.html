@@ -1,0 +1,39 @@
+<!-- .header-->
+{% include 'header.html' %} {% include 'search_form.html' %}
+<div class="middle">
+
+    <div class="container">
+        <main class="content">
+            <!-- start category -->
+
+            {% include 'category.html' %}
+            <!-- end category -->
+
+            <h2 class="advert-title">Все объявления</h2>
+            <div class="adverts" id="adverts">
+
+                {% for advert in dataAdverts %}
+                <div class="card" id="{{ advert.id }}">
+                    <div class="card-preview">
+                        <a href="/advert/edit?id={{ advert.id }}" target="_self"><img src="{{ advert.img }}" /></a>
+                    </div>
+                    <div onclick="deleteEl(this)" class="card-title">
+                        <a href="/advert/edit?id={{ advert.id }}" target="_self">{{ advert.title|slice(0, 25) }}</a>
+                    </div>
+                    <div class="card-cost">
+                        {{ advert.cost }} ₽
+                    </div>
+                    <div class="card-address">
+                        {{ advert.address }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+        <!-- .content -->
+    </div>
+    {% include 'sidebar.html' %}
+    <!-- .container-->
+</div>
+<!-- .middle-->
+{% include 'footer.html' %}
