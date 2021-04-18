@@ -15,7 +15,8 @@
                 {% for advert in dataAdverts %}
                 <div class="card" id="{{ advert.id }}">
                     <div class="card-preview">
-                        <a href="/advert/edit?id={{ advert.id }}" target="_self"><img src="{{ advert.img }}" /></a>
+                        <a href="/advert/edit?id={{ advert.id }}" target="_self">
+                            <img src="{{ advert.img }}" /></a>
                     </div>
                     <div onclick="deleteEl(this)" class="card-title">
                         <a href="/advert/edit?id={{ advert.id }}" target="_self">{{ advert.title|slice(0, 25) }}</a>

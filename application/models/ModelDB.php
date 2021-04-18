@@ -122,8 +122,10 @@ class ModelDB implements ModelDBInterface {
      {
        $data = [];
         $result =  $this -> _execute($this->instance, $this->_getQuery());
- 
-        return  mysqli_fetch_array($result,MYSQLI_ASSOC);
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data[] = $row;
+        } 
+        return $data;
      }
 
     /**
@@ -194,13 +196,26 @@ class ModelDB implements ModelDBInterface {
       $table = $this->_getTable();
       $q = "insert into {$table} set ";
 
-      foreach($data as $column => $value)
+      $dataBD = [];
+      $fill = $this->fill;
+      foreach($fill as $value)
       {
+        if(isset($data[$value])){ 
+           $dataBD[$value] = $data[$value];
+        }
+      }
+
+      $numCollumn = 0;
+      foreach( $dataBD as $column => $value)
+      {
+        $numCollumn++; 
         $q .= " `$column` =   \"{$value}\" ";
-        if(count($column)-1 != $column)
+        if(count( $dataBD) != $numCollumn)
         {
           $q .= ", ";
         }
+
+
       }
       return $q;
      }

@@ -21,7 +21,7 @@ interface AdvertsInterface {
      * @param array $params
      * @return array 
      */
-    public function saveOrUpdate(array $params): array ;
+    public function saveOrUpdate(array $params);
 
     /**
      * скрываем объявление

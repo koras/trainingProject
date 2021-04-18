@@ -55,7 +55,7 @@ class AdvertsController  extends BaseController {
     }
 
     /**
-     * @param array $params - наш $_GET для общей передачи параметров
+     * @param array $params - наш $_GET | $_POST для общей передачи параметров
      */
     public function eventAdd(array $params = [])
     {
@@ -69,14 +69,14 @@ class AdvertsController  extends BaseController {
 
         if(count($params) > 3 && count($result['error']) == 0 ){
             // записываем наше объявление
+            $params['file'] = $_FILES['imageAdvert'];
             $result['advert'] = $this -> advertService -> createAdvert($params);
         // обрабатываем данные которые прислал пользователь в форме   
-            echo 'мы добавили объявление';
-            return ;
+          //  echo 'мы добавили объявление';
+            header( 'Location: /' );
         }
         
         $result['title_header'] = "Добавляем объявление";
-
         $template = 'adverts/add.html';
         $this -> view($template, $result);
     }
@@ -91,10 +91,11 @@ class AdvertsController  extends BaseController {
 
     public function eventDefault()
     { 
-        $this->advertService->getAdvert([]);
-
+        // получаем все объявления
+        // вызываем сервисный
+        $adverts = $this->advertService->getAdvert([]);
         $template = 'adverts/index.html';
-        $this->view($template, []);
+        $this->view($template, ['dataAdverts'=> $adverts ]);
     }
     
 

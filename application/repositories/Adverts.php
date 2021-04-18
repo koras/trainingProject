@@ -8,6 +8,10 @@ class Adverts extends ModelDB implements AdvertsInterface {
 
     public $table = "adverts";
 
+    public $fill = ['cost','category','title','body','address','img'];
+
+
+
     
     public function getOne($id)
     {
@@ -17,22 +21,28 @@ class Adverts extends ModelDB implements AdvertsInterface {
                      //   -> limit(1,2)
                      //   -> show();
                         -> get();
-
-
        return $result;
     }
 
     public function getList()
     {
-        
+        return $this -> select(['id','cost','category','title','body','address','img'])
+             -> where(['status' => 1])
+             -> get();
     }
+ 
 
     
-    public function saveOrUpdate(array $params): array 
+    public function saveOrUpdate(array $params)
     {
-        
-        
-        return [];
+        if(isset($params['id'])){
+            // обновляем
+           $id = $params['id'];
+        }else{
+            // создаём новую запись
+           $id =  $this->create($params);
+        }
+        return $id;
     }
 
     

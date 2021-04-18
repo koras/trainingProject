@@ -20,9 +20,7 @@ class AdvertService implements AdvertServiceInterface {
 
 
      public function getShow($id = 1){
-
-       $row =  $this->storageAdvert -> getOne($id);
-        return $row;
+        return $this->storageAdvert -> getOne($id);
      }
 
 
@@ -34,20 +32,8 @@ class AdvertService implements AdvertServiceInterface {
      */
     public function createAdvert(array $params) : array {
 
-        
-
-
-        //  $params['id'] = rand(10, 9000);
-         $dbAdverts =  self::getDb();
-        //   if(isset($params['id'])){
-        //           $id = $params['id'];
-        //           foreach($dbAdverts as $advert){
-        //               if($id == $advert['id']){
-        //                   return $advert;
-        //               }
-        //           }
-        //   } 
-          return [];
+        $this->storageAdvert ->saveOrUpdate($params);
+        return [];
       }
 
 
@@ -56,18 +42,9 @@ class AdvertService implements AdvertServiceInterface {
        * @param array $params - данняе для объявления
        * @return  array - что мы записали
        */
-      public function getAdvert(array $params) : array {
-        //  $params['id'] = rand(10, 9000);
-         $dbAdverts =  self::getDb();
-          if(isset($params['id'])){
-                  $id = $params['id'];
-                  foreach($dbAdverts as $advert){
-                      if($id == $advert['id']){
-                          return $advert;
-                      }
-                  }
-          } 
-          return [];
+      public function getAdvert(array $params) : array { 
+            $data =  $this -> storageAdvert ->getList();
+          return $data;
       }
 
 

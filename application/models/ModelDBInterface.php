@@ -33,4 +33,12 @@ interface ModelDBInterface {
    public function get();
 
 
+    /**
+    * Здесь мы будем создавать новые записи
+    * @param array $data - ключ = значение
+    * @return int - уникальный ID
+    */
+    public function create($data);
+
+
 }
