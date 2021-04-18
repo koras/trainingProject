@@ -59,9 +59,12 @@ class AdvertsController  extends BaseController {
      */
     public function eventAdd(array $params = [])
     {
- 
+    
+        $this->advertService-> getShow(2);
+
         $result = [];
         // S.O.L.I.D.
+        // проверяем данные пользователя
         $result['error'] = $this->validationAdvert->check($params);
 
         if(count($params) > 3 && count($result['error']) == 0 ){

@@ -3,13 +3,29 @@ namespace App\services;
 
 use App\services\AdvertServiceInterface;
 
+use App\repositories\Adverts;
+
 class AdvertService implements AdvertServiceInterface {
 
     private static $singletone = null;
 
+    private $storageAdvert;
+
     public function __construct() {
-        
+        // это локальная переменная которая принадлежит только конструктору
+        $storageAdvert = 0;
+        //  это локальная переменная которая принадлежит классу
+        $this->storageAdvert =  new Adverts();
      }
+
+
+     public function getShow($id = 1){
+
+       $row =  $this->storageAdvert -> getOne($id);
+        return $row;
+     }
+
+
 
     /**
      * Здесь мы записываем новое объявление в базу данных
