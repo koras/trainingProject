@@ -5,17 +5,25 @@ use App\services\AdvertServiceInterface;
 
 use App\repositories\Adverts;
 
+use App\services\ImageService;
+
+
+
 class AdvertService implements AdvertServiceInterface {
 
     private static $singletone = null;
 
     private $storageAdvert;
 
+    private $imageService;
+
     public function __construct() {
         // это локальная переменная которая принадлежит только конструктору
         $storageAdvert = 0;
         //  это локальная переменная которая принадлежит классу
         $this->storageAdvert =  new Adverts();
+
+        $this->imageService = new ImageService();
      }
 
 
@@ -31,8 +39,12 @@ class AdvertService implements AdvertServiceInterface {
      * @return  array - что мы записали
      */
     public function createAdvert(array $params) : array {
-
+        $params['img'] = '';
+        if( $params['file']['error'] == 0){ 
+            $params['img'] = $this->imageService -> add($params['file']);
+        }
         $this->storageAdvert ->saveOrUpdate($params);
+
         return [];
       }
 

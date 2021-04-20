@@ -79,8 +79,6 @@ class Web {
             break;
             default: 
             return $this->classAdvert->eventDefault();
-            
-
          }
     }
     private function methodPOST($url)

@@ -210,12 +210,12 @@ class ModelDB implements ModelDBInterface {
       {
         $numCollumn++; 
         $q .= " `$column` =   \"{$value}\" ";
+        
         if(count( $dataBD) != $numCollumn)
         {
-          $q .= ", ";
+            $q .= ", ";
         }
-
-
+        
       }
       return $q;
      }

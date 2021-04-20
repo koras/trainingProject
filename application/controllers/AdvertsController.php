@@ -69,7 +69,8 @@ class AdvertsController  extends BaseController {
 
         if(count($params) > 3 && count($result['error']) == 0 ){
             // записываем наше объявление
-            $params['file'] = $_FILES['imageAdvert'];
+            $params['file'] = $_FILES['imageAdvert'];  
+             
             $result['advert'] = $this -> advertService -> createAdvert($params);
         // обрабатываем данные которые прислал пользователь в форме   
           //  echo 'мы добавили объявление';
