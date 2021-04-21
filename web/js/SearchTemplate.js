@@ -18,6 +18,10 @@ class SearchTemplate {
          * @returns 
          */
     getTamplate(obj) {
+
+            this.advert = obj;
+
+            console.log(this, this.advert);
             let template = '';
             switch (this.type) {
                 case "firefox":
@@ -46,7 +50,7 @@ class SearchTemplate {
          * @returns 
          */
     _browser(obj) {
-        return `<div class="data-browser">
+        this.template = `<div class="data-browser">
         <div class="browser-data">
             <div  class="browser-id">${obj.id}</div>
             <div  class="browser-name">${obj.name} </div> 
@@ -55,6 +59,7 @@ class SearchTemplate {
             <a href="${obj.url}">${obj.name}</a>
          </div>
         </div>`;
+        return this.template;
     }
 
     /**
@@ -63,6 +68,7 @@ class SearchTemplate {
      * @returns 
      */
     _mobile(obj) {
-        return `<div class="data-mobile">mobile<div class="mobile-name">${obj.name} </div><div class="mobile-id">${obj.id}</div></div>`;
+        this.template = `<div class="data-mobile">mobile<div class="mobile-name">${obj.name} </div><div class="mobile-id">${obj.id}</div></div>`;
+        return this.template;
     }
 }

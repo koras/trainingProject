@@ -2,8 +2,8 @@ class Google {
     constructor(el) {
             this.el = el;
             // объявляем класс шаблона. Устанавливаем браузер пользователя
+
             this.template = new SearchTemplate('chrome');
-            //  this.template = new SearchTemplate('iphone');
 
             // объявляем класс поиска
             this.search = new Search();
@@ -39,6 +39,7 @@ class Google {
         for (let i = 0; i < data.length; i++) {
             // получаем готовый шаблон
             let temp = this.template.getTamplate(data[i]);
+            //   console.log(temp);
             //  el.insertAdjacentHTML('afterend', temp);
             // @url https://developer.mozilla.org/ru/docs/Web/API/Element/insertAdjacentHTML
             el.insertAdjacentHTML('beforeend', temp);

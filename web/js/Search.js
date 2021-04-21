@@ -10,6 +10,30 @@ data = [{
     name: "Магазин обуви",
     id: 30,
     url: "http://shose.com"
+}, {
+    name: "1 Магазин обуви",
+    id: 110,
+    url: "http://shose6.com"
+}, {
+    name: "2 Магазин обуви",
+    id: 305,
+    url: "http://shose5.com"
+}, {
+    name: "3 Магазин обуви",
+    id: 304,
+    url: "http://shose4.com"
+}, {
+    name: "4 Магазин обуви",
+    id: 303,
+    url: "http://shos3e.com"
+}, {
+    name: "5 Магазин обуви",
+    id: 302,
+    url: "http://shose2.com"
+}, {
+    name: "6 Магазин обуви",
+    id: 301,
+    url: "http://shose1.com"
 }];
 
 
@@ -30,6 +54,7 @@ class Search {
 
     engine() {
         this.resultSearch = this.server(this.word);
+
         // сколько элементов мы нашли
         console.log('сколько элементов мы нашли');
         return this.resultSearch;
@@ -52,6 +77,7 @@ class Search {
 
             console.log(element.name.match(`${word}`));
         });
+        //  console.log(result);
         //  console.log('Мы ищем ' + word);
         return result;
     }
