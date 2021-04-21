@@ -4,15 +4,18 @@ namespace App\routes;
 
 use App\controllers\AdvertsController;
 use App\controllers\SearchController;
+use App\controllers\UsersController;
 
 class Web {
     private $classAdvert;
     private $classSearch;
+    private $classUsers;
 
     function __construct()
     {
         $this->classAdvert = new AdvertsController();
         $this->classSearch = new SearchController();
+        $this->classUsers = new UsersController();
     }
     //$_SERVER['REQUEST_METHOD'],$_SERVER['REQUEST_URI']
 
@@ -76,7 +79,13 @@ class Web {
             case 'save':{
                return $this->classAdvert->eventSave($_POST);
             }
+
+            case 'user/create':{
+               return  $this->classUsers->viewOrCreate();
+            }
+
             break;
+
             default: 
             return $this->classAdvert->eventDefault();
          }
@@ -90,6 +99,9 @@ class Web {
             break;
             case 'advert/add':{ 
                return $this->classAdvert->eventAdd($_POST);
+            }
+            case 'user/create':{  
+               return  $this->classUsers->viewOrCreate($_POST);
             }
             break;
          }
