@@ -159,7 +159,7 @@ class ModelDB implements ModelDBInterface {
                 }
             }
             if($key == "where"){
-                  $q .= " `$qKey` = $qVal ";
+                  $q .= " `$qKey` = \"$qVal\" ";
             }
             if($key == "limit"){
               if(count($qValue)-1 != $qKey)
@@ -174,6 +174,29 @@ class ModelDB implements ModelDBInterface {
       return $q ." ;";
      }
 
+    /**
+     * сырые запросы на вставку
+     */
+    public function rawInsert($query)
+     {
+      return $this -> _execute($this->instance, $query);
+     }
+
+     
+    /**
+     * Выполняем запрос
+     * @param $query - наш запрос
+     */
+    public function rawSelect($query)
+    {
+      $data = [];
+       $result =  $this -> _execute($this->instance, $query);
+       while ($row = mysqli_fetch_assoc($result)) {
+           $data[] = $row;
+       } 
+       return $data;
+    }
+     
 
      /**
       * Здесь мы будем создавать новые записи

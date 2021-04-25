@@ -13,9 +13,14 @@
             <li><a href="#">Правила публикации</a></li>
         </ul>
         <ul>
+
+            {% if isAuth %}
             <li><a href="#">Профиль</a></li>
+            <li><a href="/user/logout">Выйти</a></li>
+            {% else %}
             <li><a href="/user/create">Зарегистрироваться</a></li>
-            <li><a href="login.html">Войти</a></li>
+            <li><a href="/user/login">Войти</a></li>
+            {% endif %}
         </ul>
     </div>
 </footer>

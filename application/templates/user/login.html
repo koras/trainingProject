@@ -1,0 +1,35 @@
+{% include 'header.html' %} {% include 'search_form.html' %}
+<div class="middle">
+
+    <div class="container">
+        <main class="content">
+            <h2 class="advert-title"> {{ title }}</h2>
+            <div class="content_form">
+                <form class="advert-form advert-form-add" method="POST" action="/user/login">
+                    error
+
+                    <div class="advert-form_file">
+                        {{error}}
+                    </div>
+
+                    <div class="advert-form_file">
+                        <label>Ваша почта</label>
+                        <input type="text" maxlength="32" placeholder="Отображаемое имя" value="" name="email" required />
+                    </div>
+                    <div class="advert-form_file">
+                        <label>Ваш пароль</label>
+                        <input type="password" maxlength="16" placeholder="Пароль" value="" name="pass" required/>
+                    </div>
+
+                    <div class="advert-form_button">
+                        <button type="submit">Войти</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    {% include 'sidebar.html' %}
+    <!-- .container-->
+</div>
+<!-- .middle-->
+{% include 'footer.html' %}

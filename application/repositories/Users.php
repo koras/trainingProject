@@ -21,6 +21,24 @@ class Users extends ModelDB implements UsersInterface {
        return $result;
     }
 
+    /**
+     * Проверка пароля и емайла
+     * @param $email - почтовый адресс
+     * @param $password - наш пароль
+     * @return bool|array
+     */
+    public function checkAuth($email, $password){
+
+        $query = "select id, name, email from {$this->table} where `email`= \"$email\" and `password`=\"$password\"";
+        $result = $this->rawSelect($query);
+        
+        if(isset($result['0']['id'])){
+            return $result['0'];
+        }
+        return false;
+    }
+
+
     public function getList()
     {
         return $this -> select(['id','name','email','status','phone','address'])

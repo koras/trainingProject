@@ -12,10 +12,18 @@ interface UsersServiceInterface
     /**
      *  проверка логина и пароля
      */
-    public function check($login,$pass) :bool ; 
+  //  public function check($login,$pass) :bool ; 
+
+    /**
+     * проверяем логин пароль и возвращаем результат проверки
+     */
+    public function login($email, $pass) : bool;
+
 
     /**
      * залогинен пользователь
      */
-    public function  isAuth(): bool ;
+    public static function isAuth(): bool;
+ 
+
 }

@@ -7,15 +7,15 @@ use App\controllers\SearchController;
 use App\controllers\UsersController;
 
 class Web {
-    private $classAdvert;
-    private $classSearch;
-    private $classUsers;
+    private $controllersAdvert;
+    private $controllersSearch;
+    private $controllersUsers;
 
     function __construct()
     {
-        $this->classAdvert = new AdvertsController();
-        $this->classSearch = new SearchController();
-        $this->classUsers = new UsersController();
+        $this->controllersAdvert = new AdvertsController();
+        $this->controllersSearch = new SearchController();
+        $this->controllersUsers = new UsersController();
     }
     //$_SERVER['REQUEST_METHOD'],$_SERVER['REQUEST_URI']
 
@@ -53,57 +53,78 @@ class Web {
      
         switch($url){
             // объявления
+            case 'user/checkEmail':
+                {
+                 return  $this->controllersUsers->checkEmail($_GET);
+                }
+            break;
+
+            case 'user/logout':{
+                return  $this->controllersUsers->logout();
+             }
+            break;
+
             case 'show':{ 
-               return $this->classAdvert->eventShow($_GET);
+               return $this->controllersAdvert->eventShow($_GET);
             }
             break;
             // добавить объявление
             case 'advert/add':{
-                return $this->classAdvert->eventAdd($_GET);
+                return $this->controllersAdvert->eventAdd($_GET);
              }
             case 'search':{
             //поиск объявлени
-               return $this->classSearch->eventSearch($_GET);
+               return $this->controllersSearch->eventSearch($_GET);
             }
             break;
             case 'list':{
-               return $this->classAdvert->eventList($_GET);
+               return $this->controllersAdvert->eventList($_GET);
             }
             break;
             case "advert/edit":{
                 // мы передаём id в $_GET
-                return $this->classAdvert->eventGetForEdit($_GET);
+                return $this->controllersAdvert->eventGetForEdit($_GET);
             }
             break;
 
             case 'save':{
-               return $this->classAdvert->eventSave($_POST);
+               return $this->controllersAdvert->eventSave($_POST);
             }
-
+            break;
             case 'user/create':{
-               return  $this->classUsers->viewOrCreate();
+               return  $this->controllersUsers->viewOrCreate();
             }
-
+            break;
+            case 'user/login':{
+               return  $this->controllersUsers->login();
+            }
             break;
 
+             
+
+
             default: 
-            return $this->classAdvert->eventDefault();
+            return $this->controllersAdvert->eventDefault();
          }
     }
     private function methodPOST($url)
     {
         switch($url){
             case 'search':{
-               return $this->classSearch->eventSearch($_POST);
+               return $this->controllersSearch->eventSearch($_POST);
             }
             break;
             case 'advert/add':{ 
-               return $this->classAdvert->eventAdd($_POST);
+               return $this->controllersAdvert->eventAdd($_POST);
             }
             case 'user/create':{  
-               return  $this->classUsers->viewOrCreate($_POST);
+               return  $this->controllersUsers->viewOrCreate($_POST);
             }
             break;
+            case 'user/login':{
+                return  $this->controllersUsers->login($_POST);
+             }
+             break;
          }
     }
 }
