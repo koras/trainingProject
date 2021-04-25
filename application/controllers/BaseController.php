@@ -1,25 +1,29 @@
 <?php
 namespace App\controllers;
 
+use  App\services\UsersService;
 
 class BaseController {
 
     /**
      * наш шаблонизатор
      */
-    protected $twigInit;
-
+    protected $twigInit; 
+    private $userService;
     public function __construct()
     {
         // все пользователи
+       $this->userService =  new UsersService();
     }
 
     protected function view($template, $params = [])
     {
-        $this->twig();
         // объект twig
-        echo  $this->twigInit->render($template, $params);
+        $this->twig(); 
+        $params['isAuth'] =  $this->isAuth();
+        echo  $this -> twigInit -> render($template, $params);
     }
+ 
 
 
     private function twig(){
@@ -32,6 +36,12 @@ class BaseController {
             'auto_reload' => true
         ]); 
     }
+
+    protected function isAuth()
+    {
+        return $this->userService->isAuth();
+    }
+
 
 }
  

@@ -1,0 +1,54 @@
+<!-- .header-->
+{% include 'header.html' %} {% include 'search_form.html' %}
+<div class="middle">
+
+    <div class="container">
+        <main class="content">
+            <!-- start category -->
+
+
+            <!-- end category -->
+
+            <h2 class="advert-title">Все объявления</h2>
+            <div class="content_form">
+                <form class="advert-form advert-form-add" method="POST" action="/user/create">
+
+                    <div class="advert-form_file">
+                        <label>Ваше имя</label>
+                        <input type="text" maxlength="64" placeholder="Отображаемое имя" value="{{ name }}" name="name" required />
+                    </div>
+                    <div class="advert-form_file">
+                        <label>Адрес</label>
+                        <input type="text" maxlength="64" placeholder="Наш адрес" value="{{ address }}" name="address" />
+                    </div>
+                    <div class="advert-form_file">
+                        <label>Email</label>
+                        <input type="text" maxlength="64" placeholder="admin@admin.ru" value="{{ email }}" name="email" />
+                    </div>
+                    <div class="advert-form_file">
+                        <label>Ваш телефон</label>
+                        <input type="text" maxlength="64" placeholder="8(000)000-00-00" value="{{ phone }}" name="phone" />
+                    </div>
+                    <div class="advert-form_file">
+                        <label>Ваш пароль</label>
+                        <input type="password" maxlength="16" placeholder="Пароль" value="{{ pass }}" name="password" required/>
+                    </div>
+                    <div class="advert-form_file">
+                        <label>Повторите ваш пароль</label>
+                        <input type="password" maxlength="16" placeholder="Пароль" value="{{ re-pass }}" name="re-password" required />
+                    </div>
+
+                    <div class="advert-form_button">
+                        <button type="submit">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </div>
+            <!-- .container-->
+        </main>
+        <!-- .content -->
+    </div>
+    {% include 'sidebar.html' %}
+    <!-- .container-->
+</div>
+<!-- .middle-->
+{% include 'footer.html' %}

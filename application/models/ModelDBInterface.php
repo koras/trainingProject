@@ -40,5 +40,15 @@ interface ModelDBInterface {
     */
     public function create($data);
 
+       /**
+     * Выполняем запрос
+     * @param $query - наш запрос
+     */
+    public function rawSelect($query);
+
+        /**
+     * сырые запросы на вставку
+     */
+    public function rawInsert($query);
 
 }

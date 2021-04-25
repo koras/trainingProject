@@ -5,6 +5,16 @@ namespace App\repositories;
 interface UsersInterface {
 
     /**
+     * Проверка пароля и емайла
+     * @param $email - почтовый адресс
+     * @param $password - наш пароль
+     * 
+     * @return bool
+     */
+    public function checkAuth($email, $password);
+    
+
+    /**
      * Получаем одного пользователя
      * 
      */
